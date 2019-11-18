@@ -1,0 +1,21 @@
+<%- include('../../fragments/header.ejs'); %>
+
+<form class="form" method="POST">
+    <div class="form__row">
+        <label class="form__cell _label" for="name">Имя</label>
+        <input class="form__cell" type="text" name="name" id="name">
+    </div>
+    <div class="form__row">
+        <label class="form__cell _label" for="login">Логин</label>
+        <input class="form__cell" type="text" name="login" id="login">
+    </div>
+    <div class="form__row">
+        <label class="form__cell _label" for="email">Почта</label>
+        <input class="form__cell" type="text" name="email" id="email">
+    </div>
+    <div class="form__row">
+        <button class="form__button" type="submit">Submit</button>
+    </div>
+</form>
+
+<%- include('../../fragments/footer.ejs'); %>

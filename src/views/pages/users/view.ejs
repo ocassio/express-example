@@ -1,0 +1,28 @@
+<%- include('../../fragments/header.ejs'); %>
+
+<div class="line _bordered">
+    <a href="/users/add">Add</a>
+</div>
+
+<div class="line _table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Пользователь</th>
+                    <th>Логин</th>
+                    <th>Почта</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.login %></td>
+                        <td><%= user.email %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+</div>
+
+<%- include('../../fragments/footer.ejs'); %>
