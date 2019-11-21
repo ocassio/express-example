@@ -13,6 +13,7 @@ server.set('views', path.resolve(__dirname, 'views'));
 
 server.use(express.static(path.resolve(__dirname, 'public')));
 
+server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(requestLogger);
 
