@@ -1,5 +1,4 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const path = require('path');
 const requestLogger = require('./middlewares/request-logger.middleware');
 const controllers = require('./controllers');
@@ -13,8 +12,8 @@ server.set('views', path.resolve(__dirname, 'views'));
 
 server.use(express.static(path.resolve(__dirname, 'public')));
 
-server.use(bodyParser.json());
-server.use(bodyParser.urlencoded({ extended: true }));
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 server.use(requestLogger);
 
 server.use(controllers);
