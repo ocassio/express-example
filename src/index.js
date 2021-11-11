@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const requestLogger = require('./middlewares/request-logger.middleware');
 const controllers = require('./controllers');
+const cors = require("cors");
 
 const PORT = 3000;
 
@@ -12,6 +13,9 @@ server.set('views', path.resolve(__dirname, 'views'));
 
 server.use(express.static(path.resolve(__dirname, 'public')));
 
+server.use(cors({
+    origin: "*"
+}));
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(requestLogger);
